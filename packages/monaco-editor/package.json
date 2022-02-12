@@ -6,7 +6,9 @@
   "types": "lib/index.d.ts",
   "nteractDesktop": "src/index.ts",
   "scripts": {
-    "release": "semantic-release -e semantic-release-monorepo --tag-format='@nteract/monaco-editor@${version}'"
+    "release": "semantic-release -e semantic-release-monorepo --tag-format='@nteract/monaco-editor@${version}'",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "keywords": [
     "nteract",
@@ -28,7 +30,8 @@
     "@nteract/messaging": "^7.0.19",
     "lodash.debounce": "^4.0.6",
     "monaco-editor": "0.22.3",
-    "rxjs": "^6.3.3"
+    "rxjs": "^6.3.3",
+    "@snyk/protect": "latest"
   },
   "peerDependencies": {
     "immutable": "^4.0.0-rc.12",
@@ -113,5 +116,6 @@
         }
       ]
     ]
-  }
+  },
+  "snyk": true
 }
