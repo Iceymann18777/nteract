@@ -6,7 +6,9 @@
   "types": "lib/index.d.ts",
   "nteractDesktop": "src/index.ts",
   "scripts": {
-    "release": "semantic-release -e semantic-release-monorepo --tag-format='@nteract/presentational-components@${version}'"
+    "release": "semantic-release -e semantic-release-monorepo --tag-format='@nteract/presentational-components@${version}'",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "dependencies": {
     "@blueprintjs/core": "^3.7.0",
@@ -14,7 +16,8 @@
     "classnames": "^2.2.6",
     "re-resizable": "^6.5.0",
     "react-syntax-highlighter": "^13.0.0",
-    "react-toggle": "^4.1.1"
+    "react-toggle": "^4.1.1",
+    "@snyk/protect": "latest"
   },
   "peerDependencies": {
     "react": "^16.3.2",
@@ -113,5 +116,6 @@
         }
       ]
     ]
-  }
+  },
+  "snyk": true
 }
