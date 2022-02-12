@@ -6,7 +6,9 @@
   "types": "lib/index.d.ts",
   "nteractDesktop": "src/index.ts",
   "scripts": {
-    "release": "semantic-release -e semantic-release-monorepo --tag-format='@nteract/mythic-notifications@${version}'"
+    "release": "semantic-release -e semantic-release-monorepo --tag-format='@nteract/mythic-notifications@${version}'",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "keywords": [
     "nteract"
@@ -19,7 +21,8 @@
   },
   "dependencies": {
     "@blueprintjs/core": "^3.7.0",
-    "@nteract/myths": "^0.2.11"
+    "@nteract/myths": "^0.2.11",
+    "@snyk/protect": "latest"
   },
   "peerDependencies": {
     "immutable": "^4.0.0-rc.12",
@@ -104,5 +107,6 @@
         }
       ]
     ]
-  }
+  },
+  "snyk": true
 }
